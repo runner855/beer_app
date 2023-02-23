@@ -1,18 +1,16 @@
-import React, { useEffect } from "react";
-import apiCall from "./api/apiCall";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { NavBar } from "./components/NavBar/NavBar";
+import { PagesContainer } from "./components/PagesContainer/PagesContainer";
 
 const App = () => {
-  useEffect(() => {
-    apiCall.get(`beers/random`, {}).then((res) => {
-      console.log(res);
-    });
-  }, []);
-
   return (
     <div className="App">
       <NavBar />
+      <Routes>
+        <Route path="/beers" element={<PagesContainer />} />
+      </Routes>
     </div>
   );
 };
