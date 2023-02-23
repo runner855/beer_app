@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
+import apiCall from "./api/apiCall";
 import "./App.css";
+import { NavBar } from "./components/NavBar/NavBar";
 
-function App() {
-  return <div className="App">Beer App</div>;
-}
+const App = () => {
+  useEffect(() => {
+    apiCall.get(`beers/random`, {}).then((res) => {
+      console.log(res);
+    });
+  }, []);
+
+  return (
+    <div className="App">
+      <NavBar />
+    </div>
+  );
+};
 
 export default App;
