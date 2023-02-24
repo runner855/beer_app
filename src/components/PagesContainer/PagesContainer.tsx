@@ -17,12 +17,20 @@ export const PagesContainer = () => {
       {beerData &&
         beerData.map((item, index) => {
           return (
-            <div key={index} className="beers_container">
-              <img
-                className="beer_image"
-                src={item.image_url}
-                alt="beer_image"
-              />
+            <div className="card_container" key={index}>
+              <div className="text_content">
+                <img
+                  className="article_image"
+                  src={item.image_url}
+                  alt="article_image"
+                />
+
+                {/* <div className="article_content">{item.abstract}</div>
+                <div className="article_author">{item.byline}</div> */}
+              </div>
+              <div className="image_container">
+                <div className="title">{item.name}</div>
+              </div>
             </div>
           );
         })}

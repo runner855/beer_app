@@ -105,6 +105,7 @@
     opacity: 1;
     transition: all 0.3s ease;
     z-index: 1;
+    flex-direction: column;
   }
 
   .nav-links {
@@ -166,7 +167,7 @@
 
 .navbar ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   list-style: none;
   margin-top: 1em;
   width: 100%;
