@@ -1,8 +1,9 @@
-import { BEERS_LABEL, RANDOM_LABEL } from "../constants/dictionary";
+import { BEERS_LABEL, RANDOM_LABEL, HOME_LABEL } from "../constants/dictionary";
 import { AppUrls } from "../types/Apptypes";
+
 export const NavBarPages = [
   {
-    page: "Home",
+    page: HOME_LABEL,
     to: AppUrls.HOME,
   },
   {

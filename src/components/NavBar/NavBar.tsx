@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../NavBar/NavBar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { NavBarPages } from "../../utilities/utility";
 import AppLogo from "../../images/app_logo.png";
 import BrewDog from "../../images/brewdog.png";
@@ -11,11 +11,12 @@ export const NavBar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const navigate = useNavigate();
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
         <nav className="navbar">
-          <div className="navbar_logo">
+          <div className="navbar_logo" onClick={() => navigate("/home")}>
             <img className="avatar" src={BrewDog} alt="beer" />
           </div>
           <div className="menu-icon" onClick={handleClick}>

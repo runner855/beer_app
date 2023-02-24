@@ -1,0 +1,60 @@
+.footer {
+  background-image: url("http://rmcigarfestival.com/wp-content/uploads/2012/03/Beer-Banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  border-bottom: 0.3em solid black;
+}
+
+.footer_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer_container a {
+  margin: 0.4em;
+  width: 100%;
+  color: black;
+  font-size: 1.4em;
+}
+.footer_container a:hover {
+  cursor: pointer;
+}
+
+.footer_container li {
+  list-style-type: none;
+}
+
+.app_download_container li {
+  list-style-type: none;
+  margin: 0.2em;
+}
+
+.app_download_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 3em;
+}
+.app_download_container a {
+  font-size: 1.4em;
+}
+
+.app_download_container svg:hover {
+  cursor: pointer;
+}
+
+.download_title {
+  line-height: 1.5;
+  margin-right: 1em;
+  font-weight: 800;
+  width: 100%;
+}

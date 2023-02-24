@@ -155,21 +155,19 @@
 
 .avatar {
   margin: 1em;
-  height: 4.2em;
+  height: 3.2em;
   border-radius: 40px;
+  width: 100%;
 }
 
 .avatar:hover {
-  height: 2.2em;
-  margin: 0.4em;
-  border-radius: 50px;
   cursor: pointer;
 }
 
-ul {
+.navbar ul {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   list-style: none;
   margin-top: 1em;
-  width: 80%;
+  width: 100%;
 }
