@@ -155,17 +155,14 @@
 
 .avatar {
   margin: 1em;
-  height: 3.2em;
+  height: 4.2em;
   border-radius: 40px;
-  border: 2px solid royalblue;
-  background-color: #000;
 }
 
 .avatar:hover {
   height: 2.2em;
   margin: 0.4em;
   border-radius: 50px;
-  border: 2px solid aquamarine;
   cursor: pointer;
 }
 

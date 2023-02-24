@@ -1,4 +1,5 @@
 export enum AppUrls {
+  HOME = "/home",
   BEERS = "/beers",
   RANDOM = "/random",
 }

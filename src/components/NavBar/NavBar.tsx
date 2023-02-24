@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "../NavBar/NavBar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { NavBarPages } from "../../utilities/utility";
 import AppLogo from "../../images/app_logo.png";
+import BrewDog from "../../images/brewdog.png";
 
 export const NavBar = () => {
   const [click, setClick] = useState(false);
@@ -15,7 +16,7 @@ export const NavBar = () => {
       <IconContext.Provider value={{ color: "#fff" }}>
         <nav className="navbar">
           <div className="navbar_logo">
-            <img className="avatar" src={AppLogo} alt="beer" />
+            <img className="avatar" src={BrewDog} alt="beer" />
           </div>
           <div className="menu-icon" onClick={handleClick}>
             {click ? <FaTimes /> : <FaBars />}
