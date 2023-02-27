@@ -7,6 +7,7 @@ import { PagesContainer } from "./components/PagesContainer/PagesContainer";
 import { useParams, useNavigate } from "react-router-dom";
 import { AppUrls } from "./types/Apptypes";
 import { Home } from "./components/Home/Home";
+import { BeerDetails } from "./components/BeerDetails/BeerDetails";
 
 export const App = () => {
   const params = useParams();
@@ -18,6 +19,7 @@ export const App = () => {
         <Route path="/home" element={<Home />} />
 
         <Route path="/:page" element={<PagesContainer />} />
+        <Route path="/:page/:id" element={<BeerDetails />} />
       </Routes>
       <Footer />
     </div>
