@@ -13,13 +13,13 @@ export const PageContent = ({ beerData }: DataProps) => {
   const navigate = useNavigate();
   console.log(beerData);
   return (
-    <div className="container">
-      <div className="article_data">
+    <div className="beers_container">
+      <div className="beers_data">
         {beerData &&
           beerData.map((item, index) => {
             return (
               <div
-                className="card_container"
+                className="beers_card_container"
                 key={index}
                 onClick={() => navigate(`${item.id}`)}
               >
@@ -27,12 +27,12 @@ export const PageContent = ({ beerData }: DataProps) => {
                   style={{ width: 250 }}
                   hoverable
                   cover={
-                    <div className="image_container">
+                    <div className="beer_image_container">
                       <img alt="example" src={item.image_url} />
                     </div>
                   }
                 >
-                  <Meta title={item.name} className="name" />
+                  <Meta title={item.name} className="beer_name" />
                 </Card>
               </div>
             );

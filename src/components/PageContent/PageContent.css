@@ -1,13 +1,12 @@
-.article_data {
+.beers_data {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-around;
-  margin: 1em;
 }
 
-.card_container {
+.beers_card_container {
   margin: 1em;
   margin-top: 4em;
   border: #64d4fb solid 3px;
@@ -18,25 +17,21 @@
   width: 250px;
 } */
 
-.image_container img {
+.beer_image_container img {
   height: 12em;
   width: 30%;
   margin-top: 0.5em;
 }
 
-.image_container {
+.beer_image_container {
   text-align: center;
 }
 
-.container {
-  background-image: url("https://media.timeout.com/images/105925718/image.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  margin: 0;
+.beers_container {
+  background-color: rgb(243, 209, 163);
 }
 
-.name {
+.beer_name {
   border-bottom: 1px solid black;
   text-align: center;
   font-weight: 800;
