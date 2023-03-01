@@ -21,3 +21,31 @@
   display: flex;
   flex-direction: column;
 }
+
+.buttons_container li {
+  list-style-type: none;
+  margin: 0.2em;
+}
+
+.buttons_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+:where(.css-dev-only-do-not-override-1km3mtt).ant-btn {
+  height: 50px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 800;
+  background-color: #64d4fb;
+  color: black;
+}
+
+@media screen and (max-width: 960px) {
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+  }
+}
