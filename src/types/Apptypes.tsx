@@ -85,3 +85,51 @@ export interface BeerMaltProps {
   amount: BeerHopsAmountProps;
   name: string;
 }
+
+export interface RecipesResponseProps {
+  hits: RecipesDataProps[];
+}
+
+export interface RecipesDataProps {
+  _links: RecipesLinksDataProps;
+  recipe: RecipesStructureDataProps;
+  image: string;
+}
+
+export interface RecipesLinksDataProps {
+  href: string;
+  title: string;
+}
+
+export interface RecipesStructureDataProps {
+  calories: number;
+  cautions: [];
+  cuisineType: [];
+  dietLabels: [];
+  healthLabels: [];
+  image: string;
+  images: RecipeImagesProps;
+  ingredientLines: [];
+  ingredients: [];
+  label: string;
+  mealType: [];
+  shareAs: string;
+  source: string;
+  totalTime: number;
+  totalWeight: number;
+  uri: string;
+  url: string;
+  yield: number;
+}
+
+export interface RecipeImagesProps {
+  LARGE: RecipeImagesSizesProps;
+  REGULAR: RecipeImagesSizesProps;
+  SMALL: RecipeImagesSizesProps;
+  THUMBNAIL: RecipeImagesSizesProps;
+}
+export interface RecipeImagesSizesProps {
+  height: number;
+  url: string;
+  width: number;
+}

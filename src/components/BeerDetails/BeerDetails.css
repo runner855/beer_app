@@ -12,27 +12,27 @@
 }
 
 .alchohol_title {
-  font-weight: 600;
+  font-weight: 800;
   margin-top: 0.2em;
 }
 
 .alchohol {
   margin-top: 0.2em;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .first_brewed_title {
   margin-top: 0.2em;
   margin-bottom: 0.2em;
-  font-weight: 600;
-}
-
-.first_brewed_content {
   font-weight: 800;
 }
 
+.first_brewed_content {
+  font-weight: 600;
+}
+
 .beer_image {
-  width: 8em;
+  width: 11em;
   height: 30em;
 }
 
@@ -80,7 +80,6 @@
 
 .brewers_tips_hd {
   font-weight: 600;
-  margin-bottom: 1em;
 }
 
 .brewers_tips_content {
@@ -97,8 +96,63 @@
   margin-right: 1.8em;
 }
 
-.container {
+/* .container {
   height: 1000px;
+} */
+
+.recipes {
+  font-weight: 800;
+  list-style-type: none;
+}
+.recipes:hover {
+  color: #0473f2;
+}
+
+.description_hd {
+  font-weight: 600;
+  margin-top: 1em;
+}
+
+.recipes_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.recipes_header {
+  text-align: center;
+  margin: 1em;
+  font-weight: 600;
+  font-size: 1.8em;
+  width: 100%;
+}
+.recipe_name {
+  font-weight: 800;
+  font-size: 0.9em;
+  border-bottom: 0.1em solid black;
+  width: 100%;
+}
+
+.recipe_servings {
+  font-weight: 800;
+  border-bottom: 0.1em solid black;
+}
+.recipe_link {
+  font-weight: 800;
+  color: rgb(50, 91, 238);
+  margin-top: 1em;
+  position: absolute;
+  bottom: 10px;
+}
+
+.ant-card-cover img {
+  height: 12em;
+}
+
+.recipes_container {
+  margin-bottom: 8em;
 }
 
 @media only screen and (max-width: 900px) {
@@ -117,7 +171,7 @@
     margin-left: 1em;
   }
 
-  .container {
-    height: 1000px;
-  }
+  /* .container {
+    height: 1100px;
+  } */
 }
