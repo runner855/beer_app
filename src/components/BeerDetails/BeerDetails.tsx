@@ -6,8 +6,11 @@ import { BeersDataProps } from "../../types/Apptypes";
 import apiCall from "../../api/apiCall";
 import recipesApi from "../../api/recipesApi";
 import axios from "axios";
+import { APP_ID } from "../../keys";
 
 export const BeerDetails = () => {
+  const [recipe, setRecipe] = useState<[]>();
+  const [foodMatch, setFoodMatch] = useState<[]>();
   const [beerDetails, setBeerDetails] = useState<
     BeersDataProps[] | undefined
   >();
@@ -22,7 +25,21 @@ export const BeerDetails = () => {
     });
   }, [params]);
 
-  console.log(beerDetails);
+  const recipes = Array.from(
+    new Set(beerDetails && beerDetails.map((recipe) => recipe.food_pairing))
+  );
+  const result = recipes.map((item, index) => {
+    return item[index];
+  });
+
+  useEffect(() => {
+    recipesApi
+      .get(
+        `v2?type=public&q=${result}&app_id=${APP_ID}&app_key=${process.env.REACT_APP_API_KEY}`,
+        {}
+      )
+      .then((res) => console.log(res));
+  }, [recipes, result]);
 
   return (
     <div className="container">
@@ -65,7 +82,10 @@ export const BeerDetails = () => {
                   <div className="food_pairing">
                     {item.food_pairing.map((item, index) => {
                       return (
-                        <ul>
+                        <ul
+                          key={index}
+                          onClick={(e: any) => console.log(e.target.value)}
+                        >
                           <li>{item}</li>
                         </ul>
                       );
