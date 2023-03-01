@@ -25,6 +25,7 @@
 
 .beers_container {
   background-color: rgb(243, 209, 163);
+  margin-bottom: 8em;
 }
 
 .beer_name {

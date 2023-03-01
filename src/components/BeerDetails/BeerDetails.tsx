@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../BeerDetails/BeerDetails.css";
 
-import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
-import {
-  BeersDataProps,
-  RecipesDataProps,
-  BeerIngredientsProps,
-} from "../../types/Apptypes";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { BeersDataProps, RecipesDataProps } from "../../types/Apptypes";
 import apiCall from "../../api/apiCall";
 import recipesApi from "../../api/recipesApi";
-import axios from "axios";
 import { APP_ID } from "../../keys";
 import { Card } from "antd";
-import Meta from "antd/es/card/Meta";
 
 export const BeerDetails = () => {
   const [clickedRecipe, setClickedRecipe] = useState<string>();
@@ -43,6 +37,14 @@ export const BeerDetails = () => {
     setClickedRecipe(e.target.textContent);
   };
 
+  const recipeId =
+    relatedRecipe &&
+    relatedRecipe.map((item, index) => {
+      return `${item.recipe.uri.replace(/(.*)#recipe_/, "")}`;
+    });
+
+  console.log(recipeId);
+
   useEffect(() => {
     recipesApi
       .get(
@@ -51,8 +53,6 @@ export const BeerDetails = () => {
       )
       .then((res) => setRelatedRecipe(res.data.hits));
   }, [clickedRecipe, recipes, result]);
-
-  console.log(relatedRecipe);
 
   return (
     <div className="container">
@@ -113,28 +113,43 @@ export const BeerDetails = () => {
         {relatedRecipe &&
           relatedRecipe.map((item, index) => {
             return (
-              <Card
-                key={index}
-                hoverable
-                style={{ width: 240, height: 470, margin: 6 }}
-                cover={<img alt="example" src={item.recipe.images.SMALL.url} />}
+              <div
+                className="recipe_card"
+                onClick={() => navigate(`${recipeId}`)}
               >
-                <div className="recipe_data">
-                  <div className="recipe_name">{item.recipe.label}</div>
-                  <div className="recipe_servings">
-                    Ingredients: {item.recipe.ingredientLines.length}
-                  </div>
+                <Card
+                  key={index}
+                  hoverable
+                  style={{ width: 240, height: 470, margin: 6 }}
+                  cover={
+                    <img
+                      alt="recipe_cover"
+                      src={item.recipe.images.SMALL.url}
+                    />
+                  }
+                >
+                  <div className="recipe_data">
+                    <div className="recipe_name">{item.recipe.label}</div>
+                    <div className="recipe_servings">
+                      Ingredients: {item.recipe.ingredientLines.length}
+                    </div>
 
-                  <div className="recipe_servings">
-                    Servings: {item.recipe.yield}
+                    <div className="recipe_servings">
+                      Servings: {item.recipe.yield}
+                    </div>
+                    <div className="recipe_link">
+                      <Link
+                        to={item.recipe.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {item.recipe.source}{" "}
+                      </Link>
+                      <Link to={item.recipe.uri}>Recipe</Link>
+                    </div>
                   </div>
-                  <div className="recipe_link">
-                    <Link to={item.recipe.url} target="_blank" rel="noreferrer">
-                      {item.recipe.source}
-                    </Link>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </div>
             );
           })}
       </div>
