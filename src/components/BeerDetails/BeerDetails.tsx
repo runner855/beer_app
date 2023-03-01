@@ -37,14 +37,6 @@ export const BeerDetails = () => {
     setClickedRecipe(e.target.textContent);
   };
 
-  const recipeId =
-    relatedRecipe &&
-    relatedRecipe.map((item, index) => {
-      return `${item.recipe.uri.replace(/(.*)#recipe_/, "")}`;
-    });
-
-  console.log(recipeId);
-
   useEffect(() => {
     recipesApi
       .get(
@@ -115,7 +107,9 @@ export const BeerDetails = () => {
             return (
               <div
                 className="recipe_card"
-                onClick={() => navigate(`${recipeId}`)}
+                onClick={() =>
+                  navigate(`${item.recipe.uri.replace(/(.*)#recipe_/, "")}`)
+                }
               >
                 <Card
                   key={index}
