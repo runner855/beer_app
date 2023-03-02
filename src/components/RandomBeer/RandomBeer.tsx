@@ -7,7 +7,7 @@ export const RandomBeer = () => {
   const params = useParams();
   console.log(params);
   useEffect(() => {
-    apiCall.get(`${AppUrls.BEERS}${AppUrls.RANDOM}`, {}).then((res) => {
+    apiCall.get(`${AppUrls.BEERS}${params.page}`, {}).then((res) => {
       console.log(res);
     });
   });

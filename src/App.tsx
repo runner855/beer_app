@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { Home } from "./components/Home/Home";
 import { BeerDetails } from "./components/BeerDetails/BeerDetails";
 import { RecipeDetails } from "./components/RecipeDetails/RecipeDetails";
+import { RandomBeer } from "./components/RandomBeer/RandomBeer";
 
 export const App = () => {
   const params = useParams();

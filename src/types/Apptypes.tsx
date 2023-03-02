@@ -1,7 +1,7 @@
 export enum AppUrls {
   HOME = "/Home",
   BEERS = "/beers",
-  RANDOM = "/random",
+  RANDOM = "beers/random",
 }
 
 export enum LanguageEnum {

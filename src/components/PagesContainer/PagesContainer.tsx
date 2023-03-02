@@ -5,6 +5,7 @@ import { BeersDataProps } from "../../types/Apptypes";
 import { PageContent } from "../PageContent/PageContent";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { BeersFilter } from "../BeersFilter/BeersFilter";
 
 export const PagesContainer = () => {
   const [beerData, setBeerData] = useState<BeersDataProps[] | undefined>();

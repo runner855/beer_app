@@ -70,9 +70,13 @@
   font-weight: 800;
 }
 
-.activated {
+.nav-links:hover {
   color: #0473f2;
 }
+
+/* .activated {
+  color: #0473f2;
+} */
 
 .fa-bars {
   color: #000;
