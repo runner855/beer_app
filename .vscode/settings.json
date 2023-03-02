@@ -4,7 +4,10 @@
         "antd",
         "Apptypes",
         "brewdog",
+        "cuisinetype",
+        "dishtype",
         "INSTANGRAM",
+        "mealtype",
         "Playstore",
         "themealdb"
     ]

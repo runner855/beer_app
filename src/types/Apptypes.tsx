@@ -102,11 +102,12 @@ export interface RecipesLinksDataProps {
 }
 
 export interface RecipesStructureDataProps {
-  calories: number;
+  calories: number | null | undefined;
   cautions: [];
   cuisineType: [];
   dietLabels: [];
   healthLabels: [];
+  dishType: [];
   image: string;
   images: RecipeImagesProps;
   ingredientLines: [];
