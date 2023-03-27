@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.00f35469.css",
+    "main.js": "/static/js/main.c5926345.js",
+    "static/media/brewdog.png": "/static/media/brewdog.00c437bc6d2c939c5aeb.png",
+    "index.html": "/index.html",
+    "main.00f35469.css.map": "/static/css/main.00f35469.css.map",
+    "main.c5926345.js.map": "/static/js/main.c5926345.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00f35469.css",
+    "static/js/main.c5926345.js"
+  ]
+}
