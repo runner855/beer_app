@@ -30,8 +30,6 @@ export const Footer = () => {
         </li>
 
         <ul className="app_download_container">
-          <div className="download_title">BrewDog App</div>
-
           <li>
             <NavLink to="https://apps.apple.com/gb/app/brewdog/id1291946531">
               <FaAppStoreIos />
