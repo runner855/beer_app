@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import "../BeersFilter/BeersFilter.css";
-import { TbBeer } from "react-icons/tb";
 
 type BeersFilterProps = {
   value: string;

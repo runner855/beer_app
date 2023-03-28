@@ -26,12 +26,12 @@ export const BeerDetails = () => {
     });
   }, [params]);
 
-  const recipes = Array.from(
-    new Set(beerDetails && beerDetails.map((recipe) => recipe.food_pairing))
-  );
-  const result = recipes.map((item, index) => {
-    return item;
-  });
+  // const recipes = Array.from(
+  //   new Set(beerDetails && beerDetails.map((recipe) => recipe.food_pairing))
+  // );
+  // const result = recipes.map((item, index) => {
+  //   return item;
+  // });
 
   const handleClick = (e: any) => {
     setClickedRecipe(e.target.textContent);
@@ -44,7 +44,7 @@ export const BeerDetails = () => {
         {}
       )
       .then((res) => setRelatedRecipe(res.data.hits));
-  }, [clickedRecipe, recipes, result]);
+  }, [clickedRecipe]);
 
   return (
     <div className="container">
@@ -55,19 +55,15 @@ export const BeerDetails = () => {
             return (
               <div className="card_container" key={index}>
                 <div className="image_container">
-                  {item.image_url ? (
-                    <img
-                      className="beer_image"
-                      src={item.image_url}
-                      alt="beer_image"
-                    />
-                  ) : (
-                    <img
-                      className="not_available"
-                      src="https://d1ynl4hb5mx7r8.cloudfront.net/wp-content/uploads/2017/08/29184014/brewdog970.jpg"
-                      alt=" not available"
-                    />
-                  )}
+                  <img
+                    className="beer_image"
+                    src={
+                      item.image_url
+                        ? item.image_url
+                        : "https://d1ynl4hb5mx7r8.cloudfront.net/wp-content/uploads/2017/08/29184014/brewdog970.jpg"
+                    }
+                    alt="beer_image"
+                  />
                 </div>
                 <div className="text_content">
                   <div className="name">{item.name}</div>
@@ -89,8 +85,10 @@ export const BeerDetails = () => {
                   <div className="food_pairing">
                     {item.food_pairing.map((item, index) => {
                       return (
-                        <ul key={index} onClick={handleClick}>
-                          <li className="recipes">{item}</li>
+                        <ul key={index}>
+                          <li className="recipes" onClick={handleClick}>
+                            {item}
+                          </li>
                         </ul>
                       );
                     })}
@@ -100,56 +98,56 @@ export const BeerDetails = () => {
             );
           })}
       </div>
-      {relatedRecipe ? (
-        <div className="recipes_header">Related Recipes</div>
+      {relatedRecipe && <div className="recipes_header">Related Recipes</div>}
+      {clickedRecipe ? (
+        <div className="recipes_container">
+          {relatedRecipe &&
+            relatedRecipe.map((item, index) => {
+              return (
+                <div
+                  className="recipe_card"
+                  onClick={() =>
+                    navigate(`${item.recipe.uri.replace(/(.*)#recipe_/, "")}`)
+                  }
+                >
+                  <Card
+                    key={index}
+                    hoverable
+                    style={{ width: 240, height: 380, margin: 6 }}
+                    cover={
+                      <img
+                        alt="recipe_cover"
+                        src={item.recipe.images.SMALL.url}
+                      />
+                    }
+                  >
+                    <div className="recipe_data">
+                      <div className="recipe_name">{item.recipe.label}</div>
+                      <div className="recipe_servings">
+                        Ingredients: {item.recipe.ingredientLines.length}
+                      </div>
+
+                      <div className="recipe_servings">
+                        Servings: {item.recipe.yield}
+                      </div>
+                      <div className="recipe_link">
+                        <Link
+                          to={item.recipe.url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {item.recipe.source}{" "}
+                        </Link>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+              );
+            })}
+        </div>
       ) : (
         ""
       )}
-      <div className="recipes_container">
-        {relatedRecipe &&
-          relatedRecipe.map((item, index) => {
-            return (
-              <div
-                className="recipe_card"
-                onClick={() =>
-                  navigate(`${item.recipe.uri.replace(/(.*)#recipe_/, "")}`)
-                }
-              >
-                <Card
-                  key={index}
-                  hoverable
-                  style={{ width: 240, height: 380, margin: 6 }}
-                  cover={
-                    <img
-                      alt="recipe_cover"
-                      src={item.recipe.images.SMALL.url}
-                    />
-                  }
-                >
-                  <div className="recipe_data">
-                    <div className="recipe_name">{item.recipe.label}</div>
-                    <div className="recipe_servings">
-                      Ingredients: {item.recipe.ingredientLines.length}
-                    </div>
-
-                    <div className="recipe_servings">
-                      Servings: {item.recipe.yield}
-                    </div>
-                    <div className="recipe_link">
-                      <Link
-                        to={item.recipe.url}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {item.recipe.source}{" "}
-                      </Link>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            );
-          })}
-      </div>
     </div>
   );
 };

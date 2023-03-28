@@ -21,7 +21,6 @@ export const RecipeDetails = () => {
       .then((res) => setRecipeDetails(res.data));
   }, [params.recipeId]);
 
-  console.log(recipeDetails);
   return (
     <div className="recipe_container">
       <div className="recipe_card_container">

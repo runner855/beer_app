@@ -4,7 +4,6 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { NavLink, useNavigate } from "react-router-dom";
 import { NavBarPages } from "../../utilities/utility";
-import AppLogo from "../../images/app_logo.png";
 import BrewDog from "../../images/brewdog.png";
 
 export const NavBar = () => {
