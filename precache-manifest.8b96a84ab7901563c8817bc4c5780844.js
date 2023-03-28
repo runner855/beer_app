@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "1522dd1501043b29f506",
-    "url": "/beer_app/static/css/main.ed1af4b6.chunk.css"
+    "revision": "277ade4a551e97a3f0c7",
+    "url": "/beer_app/static/css/main.8f124b2e.chunk.css"
   },
   {
-    "revision": "1522dd1501043b29f506",
-    "url": "/beer_app/static/js/main.1522dd15.chunk.js"
+    "revision": "277ade4a551e97a3f0c7",
+    "url": "/beer_app/static/js/main.277ade4a.chunk.js"
   },
   {
     "revision": "273da43f13bf096ea852",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/beer_app/static/media/brewdog.fe090898.png"
   },
   {
-    "revision": "5757e72f0dd6d09f8dffc48b5c76fe5b",
+    "revision": "79e6b0a8fab96ccedebf14cf0a6902b8",
     "url": "/beer_app/index.html"
   }
 ];
